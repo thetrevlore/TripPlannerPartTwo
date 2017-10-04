@@ -12,3 +12,8 @@ const map = new mapboxgl.Map({
 
 const marker = buildMarker("activities", [-74.009, 40.705]);
 marker.addTo(map);
+
+window.fetch('http://localhost:3000/api')
+  .then(function (result) {
+    console.dir(result);
+  });
