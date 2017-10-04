@@ -12,9 +12,10 @@ const Place = db.define('place', {
 const Hotel = db.define('hotel', {
     name: { type: Sequelize.STRING },
     num_stars: { type: Sequelize.FLOAT, validate: { min: 1, max: 5 } },
-    amenities: { type: Sequelize.ARRAY(Sequelize.STRING),
-        get() { return this.getDataValue('amenities').join(',')}
-     }
+    amenities: { type: Sequelize.TEXT }
+    // amenities: { type: Sequelize.ARRAY(Sequelize.STRING),
+        // get() { return this.getDataValue('amenities').join(',')}
+    //  }
 });
 
 const Activity = db.define('activity', {
@@ -25,9 +26,10 @@ const Activity = db.define('activity', {
 
 const Restaurant = db.define('restaurant', {
     name: { type: Sequelize.STRING },
-    cuisine: { type: Sequelize.ARRAY(Sequelize.STRING),
-        get() { return this.getDataValue('cuisine').join(',')}
-    },
+    cuisine: { type: Sequelize.STRING },
+    // cuisine: { type: Sequelize.ARRAY(Sequelize.STRING),
+    //     get() { return this.getDataValue('cuisine').join(',')}
+    // },
     price: { type: Sequelize.INTEGER, validate: { min: 1, max: 5 } }
 });
 
